@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# Keyring
+dbus-update-activation-environment --all
+gnome-keyring-daemon --start
+
+# Set cursor
+xset s offxsetroot -cursor_name left_ptr
+
+# Turn off bell
+xset -b
+
+# Host specific initialization
+case $(hostname) in
+    Loke)
+        case "$(xrandr --listmonitors | grep -e '^ \w*: ' | wc -l)" in
+            1)
+                ;;
+            2)
+                xrandr --output HDMI-1 --primary
+                xrandr --output eDP-1 --mode 1360x768 --pos 0x432
+                ;;
+            *)
+                >2& echo "Unhandled number of displays!"
+                exit 1
+        esac
+        ;;
+    Frej)
+        xrandr --output DP-2 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP-1 --off --output HDMI-1 --off --output HDMI-2 --off --output HDMI-3 --off --output DP-3 --mode 2560x1440 --pos 2560x0 --rotate normal --output HDMI-4 --off
+        ;;
+    *)
+        echo "Skipping host specific initialization"
+        ;;
+esac
+
+
+
+# Set background
+feh --no-fehbg --bg-fill /usr/share/dotfiles/backgrounds/bg.*
+
+# Start dunst (show notifications)
+dunst &
+
+# Start composition manager, to allow transparency
+xcompmgr &
+
+# Start Conky
+conky &

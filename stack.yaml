@@ -1,0 +1,16 @@
+resolver:
+  url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/lts/22/23.yaml
+
+packages:
+- .
+
+extra-deps:
+- iwlib-0.1.2
+- netlink-1.1.1.0
+- xmobar-0.48.1
+- xmonad-0.18.0
+- xmonad-contrib-0.18.0
+
+flags:
+  xmobar:
+    all_extensions: true
