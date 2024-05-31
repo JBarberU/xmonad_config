@@ -49,8 +49,7 @@ myVeryDarkGrey :: String
 myVeryDarkGrey= "#282828"
 
 myLightBeige :: String
-myLightBeige= "#ff00ff"
---myLightBeige= "#ebdbb2"
+myLightBeige= "#ebdbb2"
 
 myLightGrey :: String
 myLightGrey = "#928374"

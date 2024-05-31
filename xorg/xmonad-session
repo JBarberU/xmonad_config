@@ -2,8 +2,6 @@
 
 SESSION_RC=$HOME/.config/xmonad/xorg/xmonad-session-rc
 
-echo "$SESSION_RC"
-
 if [ -f "$SESSION_RC" ]; then
     cat "$SESSION_RC" | sh
     xmonad
