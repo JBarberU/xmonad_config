@@ -51,7 +51,6 @@ myFocusedBorderColor :: String
 myFocusedBorderColor = myDarkPurple
 
 myFocusFollowsMouse :: Bool
-{-myFocusFollowsMouse = True-}
 myFocusFollowsMouse = False
 
 myWorkspaces :: [String]
@@ -99,7 +98,7 @@ myScratchpads =
       ("IrssiTerminal", myNamedTerminal ++ "IrssiTerminal -e irssi", "IrssiTerminal"),
       ("CmusTerminal", myNamedTerminal ++ "CmusTerminal -e cmus", "CmusTerminal"),
       ("AlsaTerminal", myNamedTerminal ++ "AlsaTerminal -e alsamixer", "AlsaTerminal"),
-      ("FullRemoteTerminal", myNamedTerminal ++ "FullRemoteTerminal -e ssh workstation -t 'tmux new-session -A main'", "FullRemoteTerminal"),
+      ("FullRemoteTerminal", myNamedTerminal ++ "FullRemoteTerminal -e ssh workstation -t 'tmux new-session -A -s main'", "FullRemoteTerminal"),
       ("FullTerminal", myNamedTerminal ++ "FullTerminal -e tmux new-session -A -s main", "FullTerminal")
     ]
   ]
