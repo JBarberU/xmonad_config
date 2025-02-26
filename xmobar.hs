@@ -93,11 +93,11 @@ desktopConfigWifi adapterName =
                                   , "--High", "90", "--high", myLightGreen
                                   ] 50
       ]
-      , template = "%StdinReader% }{ %cmus% | %wh1000% | %" ++ adapterName ++ "% | %battery% | %coretemp% | %cpu% | %memory% | <fc=" ++ myLightPurple ++ ">%date%</fc> "
+      , template = "%StdinReader% }{ %cmus% | %" ++ adapterName ++ "% | %coretemp% | %cpu% | %memory% | <fc=" ++ myLightPurple ++ ">%date%</fc> "
     }
 
 config :: String -> Config
-config "Fenrisulven" = desktopConfigWifi "wlp2s0"
+config "Fenrisulven" = desktopConfig
 config "Frej" = desktopConfig
 config "Loke" = laptopConfig "wlp3s0"
 config _ = laptopConfig "wlp3s0"
