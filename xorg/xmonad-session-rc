@@ -47,3 +47,9 @@ xcompmgr &
 
 # Start Conky
 conky &
+
+# Start polkit agent
+/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
+# Start udiskie (drive automount)
+udiskie &
