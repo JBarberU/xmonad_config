@@ -1,0 +1,7 @@
+#!/bin/bash
+
+exec 5>&1
+if ! jellyfin-tui; then
+    notify-send -u critical -t 10000 "jellyfin-tui" "`jellyfin-tui | tail -n +13`"
+fi
+

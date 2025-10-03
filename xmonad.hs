@@ -83,6 +83,9 @@ rhythmbox a = spawn ("rhythmbox-client " ++ action)
                   RAPrev      -> "--prev"
                   RAPlayPause -> "--play-pause"
 
+myTerminalMusicApplication :: String
+myTerminalMusicApplication = "try-jellyfin-tui"
+
 myScratchpads :: [NamedScratchpad]
 myScratchpads =
   let
@@ -96,7 +99,7 @@ myScratchpads =
     [
       ("Browser",       browserSP, "myBrowser"),
       ("IrssiTerminal", myNamedTerminal ++ "IrssiTerminal -e irssi", "IrssiTerminal"),
-      ("CmusTerminal", myNamedTerminal ++ "CmusTerminal -e cmus", "CmusTerminal"),
+      ("MusicTerminal", myNamedTerminal ++ "MusicTerminal -e " ++ myTerminalMusicApplication, "MusicTerminal"),
       ("AlsaTerminal", myNamedTerminal ++ "AlsaTerminal -e alsamixer", "AlsaTerminal"),
       ("FullRemoteTerminal", myNamedTerminal ++ "FullRemoteTerminal -e ssh workstation -t 'tmux new-session -A -s main'", "FullRemoteTerminal"),
       ("FullTerminal", myNamedTerminal ++ "FullTerminal -e tmux new-session -A -s main", "FullTerminal")
@@ -156,7 +159,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
       (xK_n,      namedScratchpadAction myScratchpads "FullRemoteTerminal"),
       (xK_i,      namedScratchpadAction myScratchpads "IrssiTerminal"),
       (xK_s,      namedScratchpadAction myScratchpads "FullTerminal"),
-      (xK_m,      namedScratchpadAction myScratchpads "CmusTerminal")
+      (xK_m,      namedScratchpadAction myScratchpads "MusicTerminal")
     ]
   ]
   ++
