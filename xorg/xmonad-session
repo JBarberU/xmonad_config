@@ -1,10 +1,11 @@
 #!/bin/bash
 
-SESSION_RC=$HOME/.config/xmonad/xorg/xmonad-session-rc
+SESSION_RC=$HOME/.config/xmonad/xmonad-session-rc
+LOG_FILE=$HOME/.local/share/xmonad/xmonad.log
 
 if [ -f "$SESSION_RC" ]; then
     cat "$SESSION_RC" | sh
-    xmonad
+    xmonad &> "$LOG_FILE"
 else
-    xmonad
+    xmonad &> "$LOG_FILE"
 fi

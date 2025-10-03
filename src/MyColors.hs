@@ -56,4 +56,4 @@ myTransparent :: String
 myTransparent = "#00000000"
 
 myVeryDarkGrey :: String
-myVeryDarkGrey= "#282828"
+myVeryDarkGrey = "#282828"
